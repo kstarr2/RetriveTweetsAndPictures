@@ -27,6 +27,7 @@ def create_directory():
     try:
         if os.path.isdir("./imagesFromTweets") != True:
             os.makedirs("./imagesFromTweets")
+
     except OSError as exception:
         if exception.errno != errno.EEXIST:
             raise
@@ -69,7 +70,6 @@ if __name__ == '__main__':
     listOfPictureUrls = []
 
     get_urls(listOfPictureUrls, userName)
-    print("")
 
     create_directory()
     os.chdir("./imagesFromTweets")
